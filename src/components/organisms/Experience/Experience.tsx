@@ -21,11 +21,12 @@ type Props = {
 const Component = ({ experiences }: Props) => {
   return (
     <Container>
+      <Typography variant='h5'>Experience</Typography>
       <ExperiencesContainer>
         {experiences?.map((exp, expIdx) => (
           <div key={expIdx} className='experience-row-container'>
             <div className='company-container'>
-              <Typography variant='h5'>{exp.companyName}</Typography>
+              <Typography variant='h6'>{exp.companyName}</Typography>
             </div>
             {exp.positions.map((pos, posIdx) => {
               const endDate = pos.endDate ?? new Date();
@@ -36,14 +37,19 @@ const Component = ({ experiences }: Props) => {
               const monthsText = months ? `${months} mos` : '';
 
               return (
-                <div key={`${expIdx}-${posIdx}`} className='position-container'>
-                  <Typography variant='h6'>{pos.title}</Typography>
-                  <Typography variant='caption'>{`${moment(pos.startDate).format('MMM YYYY')} - ${pos.endDate ? moment(pos.endDate).format('MMM YYYY') : 'Present'} • ${yearsText} ${monthsText}`}</Typography>
-                  <br />
-                  <Typography variant='caption'>{pos.location}</Typography>
-                  <Typography variant='body1' className='description'>
-                    {pos.description}
-                  </Typography>
+                <div className='position-row-container'>
+                  <div className='position-line-container'></div>
+                  <div key={`${expIdx}-${posIdx}`} className='position-container'>
+                    <Typography variant='body1' className='position-title'>
+                      {pos.title}
+                    </Typography>
+                    <Typography variant='caption'>{`${moment(pos.startDate).format('MMM YYYY')} - ${pos.endDate ? moment(pos.endDate).format('MMM YYYY') : 'Present'} • ${yearsText} ${monthsText}`}</Typography>
+                    <br />
+                    <Typography variant='caption'>{pos.location}</Typography>
+                    <Typography variant='body1' className='position-description'>
+                      {pos.description}
+                    </Typography>
+                  </div>
                 </div>
               );
             })}
