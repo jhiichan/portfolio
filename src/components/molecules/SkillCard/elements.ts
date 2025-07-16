@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Card } from '@mui/material';
+import { DEVICE_MEDIA_QUERIES } from '../../../constants';
 
 const StyledCard = styled(Card)`
   height: 200px;
@@ -23,6 +24,7 @@ const StyledCard = styled(Card)`
     gap: 10px;
     align-items: center;
     padding: 7px;
+    height: 186px;
   }
 
   .collapsed-content img {
@@ -35,10 +37,11 @@ const StyledCard = styled(Card)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
     width: 200px;
   }
 
-  .expanded-content .expanded-content-header {
+  .expanded-content-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,8 +53,32 @@ const StyledCard = styled(Card)`
     object-fit: contain;
   }
 
-  .expanded-content .expanded-content-content {
+  .expanded-content-content {
     align-self: start;
+    width: 100%;
+  }
+
+  @media ${DEVICE_MEDIA_QUERIES.phones} {
+    height: initial;
+    align-items: center;
+
+    &.collapsed {
+      width: 100%;
+    }
+
+    &.expanded {
+      justify-content: center;
+    }
+
+    && .collapsed-content {
+      writing-mode: initial;
+      text-orientation: initial;
+      height: initial;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 7px 7px 7px 30px;
+    }
   }
 `;
 

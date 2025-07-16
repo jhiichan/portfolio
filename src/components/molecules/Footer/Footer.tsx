@@ -6,6 +6,7 @@ import {
   GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon,
 } from '@mui/icons-material';
+import { darkModeTheme } from '../../../configs';
 import { Container } from './elements';
 
 type Props = {
@@ -19,24 +20,31 @@ const Component = ({ name, onEmailIconClick, onGitHubIconClick, onLinkedInIconCl
   const currentYear = moment().year();
 
   return (
-    <Container>
-      <Stack width='100%' justifyContent='space-between' alignItems='center' direction='row'>
-        <Box>
+    <Container theme={darkModeTheme}>
+      <Stack
+        className='footer-content'
+        maxWidth='1200px'
+        justifyContent='space-between'
+        alignItems='center'
+        direction='row'
+        flex={1}
+      >
+        <Box className='copyright-container'>
           <Typography variant='body2'>{`© ${currentYear} ${name}. All rights reserved.`}</Typography>
         </Box>
         <Stack alignItems='center' direction='row' spacing={1}>
           {onEmailIconClick && (
-            <IconButton onClick={onEmailIconClick}>
+            <IconButton color='primary' onClick={onEmailIconClick}>
               <EmailIcon />
             </IconButton>
           )}
           {onGitHubIconClick && (
-            <IconButton onClick={onGitHubIconClick}>
+            <IconButton color='primary' onClick={onGitHubIconClick}>
               <GitHubIcon />
             </IconButton>
           )}
           {onLinkedInIconClick && (
-            <IconButton onClick={onLinkedInIconClick}>
+            <IconButton color='primary' onClick={onLinkedInIconClick}>
               <LinkedInIcon />
             </IconButton>
           )}
