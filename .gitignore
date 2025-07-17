@@ -25,3 +25,8 @@ yarn-error.log*
 
 *storybook.log
 storybook-static
+
+# Firebase config files generated locally
+.firebaserc
+firebase-debug.log
+firebase-debug.*.log

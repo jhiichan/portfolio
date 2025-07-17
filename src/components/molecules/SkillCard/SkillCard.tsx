@@ -19,14 +19,14 @@ const Component = ({ name, expanded, skillImgSrc, children, onCardClick }: Props
     <StyledCard className={expanded ? 'expanded' : 'collapsed'} onClick={onCardClick}>
       <Collapse in={!expanded} orientation={collapseOrientation} timeout={0} unmountOnExit>
         <CardContent className='collapsed-content'>
-          <img src={skillImgSrc} />
+          <img alt={name} src={skillImgSrc} />
           <Typography variant='h6'>{name}</Typography>
         </CardContent>
       </Collapse>
       <Collapse in={expanded} orientation={collapseOrientation} timeout={0} unmountOnExit>
         <CardContent className='expanded-content'>
           <div className='expanded-content-header'>
-            <img src={skillImgSrc} />
+            <img alt={name} src={skillImgSrc} />
             <Typography variant='h6'>{name}</Typography>
           </div>
           <div className='expanded-content-content'>{children}</div>
