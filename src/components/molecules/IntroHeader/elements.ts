@@ -6,7 +6,7 @@ const Container = styled(Box)<{ theme?: Theme }>`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 50px 0;
+  padding: 16px 0;
   background-color: ${({ theme }) => theme.palette.grey[900]};
 
   .intro-container {
@@ -25,6 +25,7 @@ const Container = styled(Box)<{ theme?: Theme }>`
     width: 100px;
     border-radius: 100px;
     background-color: gray;
+    border: 4px solid white;
   }
 
   .profile-picture-container img {
