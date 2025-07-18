@@ -1,12 +1,11 @@
-import React from 'react';
-import { IconButton, Stack, Typography } from '@mui/material';
+import { IconButton, Stack, Typography } from "@mui/material";
 import {
   Email as EmailIcon,
   GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon,
-} from '@mui/icons-material';
-import { Container } from './elements';
-import { darkModeTheme } from '../../../configs';
+} from "@mui/icons-material";
+import { Container } from "./elements";
+import { darkModeTheme } from "../../../configs";
 
 type Props = {
   name: string;
@@ -29,29 +28,29 @@ const Component = ({
 }: Props) => {
   return (
     <Container theme={darkModeTheme}>
-      <div className='profile-picture-container'>
-        <img alt='Profile' src={profilePicSrc} />
+      <div className="profile-picture-container">
+        <img alt="Profile" src={profilePicSrc} />
       </div>
-      <div className='intro-container'>
-        <Typography variant='h4'>{name}</Typography>
-        <Typography variant='h6'>{title}</Typography>
-        <Typography variant='body2' className='intro-description'>
+      <div className="intro-container">
+        <Typography variant="h4">{name}</Typography>
+        <Typography variant="h6">{title}</Typography>
+        <Typography variant="body2" className="intro-description">
           {description}
         </Typography>
       </div>
-      <Stack alignItems='center' direction='row' spacing={1}>
+      <Stack alignItems="center" direction="row" spacing={1}>
         {onEmailIconClick && (
-          <IconButton color='primary' onClick={onEmailIconClick}>
+          <IconButton color="primary" onClick={onEmailIconClick}>
             <EmailIcon />
           </IconButton>
         )}
         {onGitHubIconClick && (
-          <IconButton color='primary' onClick={onGitHubIconClick}>
+          <IconButton color="primary" onClick={onGitHubIconClick}>
             <GitHubIcon />
           </IconButton>
         )}
         {onLinkedInIconClick && (
-          <IconButton color='primary' onClick={onLinkedInIconClick}>
+          <IconButton color="primary" onClick={onLinkedInIconClick}>
             <LinkedInIcon />
           </IconButton>
         )}
