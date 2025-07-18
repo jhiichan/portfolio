@@ -9,7 +9,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy-all": "firebase deploy --only hosting",
+    "deploy-dev-portfolio": "firebase hosting:channel:deploy dev --only portfolio",
+    "deploy-dev-storybook": "firebase hosting:channel:deploy dev --only storybook"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
