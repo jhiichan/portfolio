@@ -25,11 +25,10 @@ const Component = ({ name, onEmailIconClick, onGitHubIconClick, onLinkedInIconCl
         maxWidth='1200px'
         justifyContent='space-between'
         alignItems='center'
-        direction='row'
         flex={1}
       >
         <Box className='copyright-container'>
-          <Typography variant='body2'>{`© ${currentYear} ${name}. All rights reserved.`}</Typography>
+          <Typography variant='body2'>{`Developed by ${name}, built with Vite + React TS + Material UI © ${currentYear}. All rights reserved.`}</Typography>
         </Box>
         <Stack alignItems='center' direction='row' spacing={1}>
           {onEmailIconClick && (
