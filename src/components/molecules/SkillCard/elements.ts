@@ -36,6 +36,9 @@ const StyledCard = styled(Card)<{ theme?: Theme }>`
     width: 200px;
     height: 100%;
     padding: 0;
+    text-align: center;
+    line-height: 22px;
+    white-space: pre-wrap;
   }
 
   .expanded-content-header {
