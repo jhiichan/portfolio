@@ -1,69 +1,43 @@
-# React + TypeScript + Vite
+# Portfolio React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the souce code of my simple portfolio website!
 
-Currently, two official plugins are available:
+## Tech Stack/Libraries
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React + TypeScript + Vite](https://vite.dev/guide)
+- [Firebase](https://firebase.google.com/)
+- [Storybook](https://storybook.js.org)
+- [Material UI](https://mui.com/material-ui)
+- [MomentJS](https://momentjs.com)
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone the repository
+2. Create an `.env` file based from [.env.example](.env.example) (optional)
+3. Run `npm run dev` to start the dev server.
+4. Run `npm run storybook` to start storybook.
+5. Material themes can be modified in [themes.tsx](src/configs/themes.tsx) (optional).
+6. Data can be modified in [data.ts](src/constants/data.tsx).
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Deployment
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Setup a [Firebase Project](console.firebase.google.com).
+2. Setup hosting in that project.
+3. Add another site if you want to deploy storybook as well (optional).
+4. Install Firebase CLI if you haven't yet.
+   ```
+   npm install -g firebase-tools
+   ```
+5. Login through Firebase CLI if you haven't yet.
+   ```
+   firebase login
+   ```
+6. Create a `.firebaserc` based from [.firebaserc.example](.firebaserc.example).
+7. Update the names in `.firebaserc` to match your Project IDs created in Firebase.
+   - `nickname-portfolio` should be replaced with the default id as you created the project.
+   - `nickname-portfolio-storybook` should be replaced with the additional site you created within the project.
+8. Run `npm run build` to build the React App (Portfolio).
+9. Run `npm run build-storybook` to build the Storybook.
+10. Run `npm run deploy-dev-portfolio` to deploy the React App to a dev channel for testing (optional).
+11. Run `npm run deploy-dev-storybook` to deploy the Storybook to a dev channel for testing (optional).
+12. `npm run deploy-all` will deploy both React App and Storybook to their respective site.
