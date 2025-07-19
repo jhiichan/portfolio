@@ -1,10 +1,9 @@
-import { Button, type ButtonProps } from '@mui/material';
+import { Button, type ButtonProps } from "@mui/material";
 
 type Props = {} & ButtonProps;
 
-const Component = ({ children, ...otherProps }: Props) => {
-  return <Button {...otherProps}>{children}</Button>;
+const Component = ({ ...otherProps }: Props) => {
+  return <Button {...otherProps} disableTouchRipple />;
 };
 
 export default Component;
-export type { Props };

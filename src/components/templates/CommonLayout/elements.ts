@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
-import { Box } from '@mui/material';
-import { DEVICE_MEDIA_QUERIES } from '../../../constants';
+import styled from "@emotion/styled";
+import { Box } from "@mui/material";
+import { DEVICE_MEDIA_QUERIES, PAGE_MAX_WIDTH } from "../../../constants";
 
 const Container = styled(Box)`
   display: flex;
@@ -16,8 +16,8 @@ const Content = styled(Box)`
   flex-direction: column;
 
   & > div {
-    padding-left: calc((100% - 1200px) / 2);
-    padding-right: calc((100% - 1200px) / 2);
+    padding-left: calc((100% - ${PAGE_MAX_WIDTH}) / 2);
+    padding-right: calc((100% - ${PAGE_MAX_WIDTH}) / 2);
   }
 
   @media ${DEVICE_MEDIA_QUERIES.phones}, ${DEVICE_MEDIA_QUERIES.tablets} {

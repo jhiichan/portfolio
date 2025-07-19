@@ -1,7 +1,12 @@
-import React from 'react';
-import { Collapse, CardContent, Typography, useMediaQuery } from '@mui/material';
-import { StyledCard } from './elements';
-import { DEVICE_MEDIA_QUERIES } from '../../../constants';
+import React from "react";
+import {
+  Collapse,
+  CardContent,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import { StyledCard } from "./elements";
+import { DEVICE_MEDIA_QUERIES } from "../../../constants";
 
 type Props = {
   name: string;
@@ -11,25 +16,45 @@ type Props = {
   onCardClick?: () => void;
 };
 
-const Component = ({ name, expanded, skillImgSrc, children, onCardClick }: Props) => {
+const Component = ({
+  name,
+  expanded,
+  skillImgSrc,
+  children,
+  onCardClick,
+}: Props) => {
   const isMobile = useMediaQuery(DEVICE_MEDIA_QUERIES.phones);
-  const collapseOrientation = isMobile ? 'vertical' : 'horizontal';
+  const collapseOrientation = isMobile ? "vertical" : "horizontal";
 
   return (
-    <StyledCard className={expanded ? 'expanded' : 'collapsed'} onClick={onCardClick}>
-      <Collapse in={!expanded} orientation={collapseOrientation} timeout={0} unmountOnExit>
-        <CardContent className='collapsed-content'>
+    <StyledCard
+      className={expanded ? "expanded" : "collapsed"}
+      variant="outlined"
+      onClick={onCardClick}
+    >
+      <Collapse
+        in={!expanded}
+        orientation={collapseOrientation}
+        timeout={0}
+        unmountOnExit
+      >
+        <CardContent className="collapsed-content">
           <img alt={name} src={skillImgSrc} />
-          <Typography variant='h6'>{name}</Typography>
+          <Typography variant="h6">{name}</Typography>
         </CardContent>
       </Collapse>
-      <Collapse in={expanded} orientation={collapseOrientation} timeout={0} unmountOnExit>
-        <CardContent className='expanded-content'>
-          <div className='expanded-content-header'>
+      <Collapse
+        in={expanded}
+        orientation={collapseOrientation}
+        timeout={0}
+        unmountOnExit
+      >
+        <CardContent className="expanded-content">
+          <div className="expanded-content-header">
             <img alt={name} src={skillImgSrc} />
-            <Typography variant='h6'>{name}</Typography>
+            <Typography variant="h6">{name}</Typography>
           </div>
-          <div className='expanded-content-content'>{children}</div>
+          <div className="expanded-content-content">{children}</div>
         </CardContent>
       </Collapse>
     </StyledCard>

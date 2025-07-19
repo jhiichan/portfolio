@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import type { Theme } from '@mui/material';
+import styled from "@emotion/styled";
+import type { Theme } from "@mui/material";
 
 const Container = styled.div`
   padding: 16px 0;
@@ -21,12 +21,12 @@ const ExperiencesContainer = styled.div<{ theme?: Theme }>`
   }
 
   .position-line-container::before {
-    content: '•';
+    content: "•";
     font-size: 28px;
     color: ${({ theme }) => theme.palette.grey[500]};
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 10px;
+    left: 6px;
   }
 
   .position-line-container {
@@ -35,7 +35,8 @@ const ExperiencesContainer = styled.div<{ theme?: Theme }>`
     margin: 0 10px;
   }
 
-  .position-row-container:nth-of-type(2):last-of-type > .position-line-container {
+  .position-row-container:nth-of-type(2):last-of-type
+    > .position-line-container {
     visibility: hidden;
   }
 

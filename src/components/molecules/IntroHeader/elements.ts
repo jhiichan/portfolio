@@ -1,12 +1,12 @@
-import styled from '@emotion/styled';
-import { Box, type Theme } from '@mui/material';
+import styled from "@emotion/styled";
+import { Box, type Theme } from "@mui/material";
 
 const Container = styled(Box)<{ theme?: Theme }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 16px 0;
+  padding: 85px 0 16px;
   background-color: ${({ theme }) => theme.palette.grey[900]};
 
   .intro-container {

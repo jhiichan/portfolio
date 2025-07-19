@@ -1,5 +1,5 @@
-import { createTheme } from '@mui/material/styles';
-import { purple } from '@mui/material/colors';
+import { createTheme } from "@mui/material/styles";
+import { purple } from "@mui/material/colors";
 
 const portfolioTheme = createTheme({
   palette: {
@@ -7,14 +7,14 @@ const portfolioTheme = createTheme({
       main: purple[500],
     },
     secondary: {
-      main: '#f44336',
+      main: "#f44336",
     },
   },
 });
 
 const darkModeTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: "dark",
   },
 });
 
