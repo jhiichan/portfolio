@@ -34,6 +34,7 @@ const StyledCard = styled(Card)<{ theme?: Theme }>`
     flex-direction: column;
     align-items: center;
     width: 200px;
+    height: 100%;
     padding: 0;
   }
 
@@ -52,9 +53,10 @@ const StyledCard = styled(Card)<{ theme?: Theme }>`
 
   .expanded-content-content {
     align-self: start;
-    width: 100%;
+    width: calc(100% - 32px);
     background-color: ${({ theme }) => theme.palette.grey["A200"]};
-    padding: 10px 16px 0;
+    padding: 10px 16px;
+    flex: 1;
   }
 
   @media ${DEVICE_MEDIA_QUERIES.phones} {
