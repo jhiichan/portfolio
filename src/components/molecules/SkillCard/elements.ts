@@ -1,8 +1,8 @@
-import styled from '@emotion/styled';
-import { Card } from '@mui/material';
-import { DEVICE_MEDIA_QUERIES } from '../../../constants';
+import styled from "@emotion/styled";
+import { Card, type Theme } from "@mui/material";
+import { DEVICE_MEDIA_QUERIES } from "../../../constants";
 
-const StyledCard = styled(Card)`
+const StyledCard = styled(Card)<{ theme?: Theme }>`
   height: 200px;
   display: flex;
   cursor: pointer;
@@ -10,10 +10,6 @@ const StyledCard = styled(Card)`
 
   &.collapsed {
     width: 64px;
-  }
-
-  &.expanded {
-    // width: 200px;
   }
 
   .collapsed-content {
@@ -37,14 +33,15 @@ const StyledCard = styled(Card)`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
     width: 200px;
+    padding: 0;
   }
 
   .expanded-content-header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 16px;
   }
 
   .expanded-content-header img {
@@ -56,6 +53,8 @@ const StyledCard = styled(Card)`
   .expanded-content-content {
     align-self: start;
     width: 100%;
+    background-color: ${({ theme }) => theme.palette.grey["A200"]};
+    padding: 10px 16px 0;
   }
 
   @media ${DEVICE_MEDIA_QUERIES.phones} {
@@ -68,6 +67,11 @@ const StyledCard = styled(Card)`
 
     &.expanded {
       justify-content: center;
+      display: block;
+    }
+
+    & .expanded-content {
+      width: 100%;
     }
 
     && .collapsed-content {

@@ -1,9 +1,10 @@
-import { IconButton, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import {
   Email as EmailIcon,
   GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon,
 } from "@mui/icons-material";
+import { IconButton } from "../../atoms";
 import { Container } from "./elements";
 import { darkModeTheme } from "../../../configs";
 
